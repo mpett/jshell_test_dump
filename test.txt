@@ -1,0 +1,259 @@
+rtins-MacBook-Pro-2:/ martinpettersson$ pwd
+/
+Martins-MacBook-Pro-2:/ martinpettersson$ cd Library/
+.localized             ColorPickers/          CoreMediaIO/           Documentation/         Frameworks/            Java/                  Logs/                  Perl/                  Python/                Sandbox/               Speech/                User Pictures/
+Application Support/   ColorSync/             Desktop Pictures/      DropboxHelperTools/    Graphics/              Keyboard Layouts/      Messages/              PreferencePanes/       QuickLook/             Screen Savers/         Spotlight/             Video/
+Audio/                 Components/            Developer/             Extensions/            Image Capture/         Keychains/             Modem Scripts/         Preferences/           QuickTime/             ScriptingAdditions/    StartupItems/          WebServer/
+Bundles/               Compositions/          Dictionaries/          Filesystems/           Input Methods/         LaunchAgents/          OpenDirectory/         Printers/              Receipts/              Scripts/               SystemProfiler/        Widgets/
+Caches/                Contextual Menu Items/ DirectoryServices/     Fonts/                 Internet Plug-Ins/     LaunchDaemons/         PDF Services/          PrivilegedHelperTools/ Ruby/                  Security/              Updates/               iTunes/
+Martins-MacBook-Pro-2:/ martinpettersson$ cd Library/Java/
+Extensions/          JavaVirtualMachines/
+Martins-MacBook-Pro-2:/ martinpettersson$ cd Library/Java/JavaVirtualMachines/jdk
+jdk-9.jdk/        jdk1.8.0_101.jdk/
+Martins-MacBook-Pro-2:/ martinpettersson$ cd Library/Java/JavaVirtualMachines/jdk-9.jdk/
+Martins-MacBook-Pro-2:jdk-9.jdk martinpettersson$ ls
+Contents
+Martins-MacBook-Pro-2:jdk-9.jdk martinpettersson$ cd Contents/
+Martins-MacBook-Pro-2:Contents martinpettersson$ ls
+Home   		Info.plist     	MacOS
+Martins-MacBook-Pro-2:Contents martinpettersson$ cd Home/
+COPYRIGHT                    THIRDPARTYLICENSEREADME.txt  conf/                        jmods/                       lib/                         src.zip
+README.html                  bin/                         include/                     jrt-fs.jar                   release
+Martins-MacBook-Pro-2:Contents martinpettersson$ cd Home/bin/
+ControlPanel  jar           javac         javap         jcmd          jdb           jhsdb         jjs           jmod          jshell        jstatd        keytool       policytool    rmiregistry   servertool    wsgen
+appletviewer  jarsigner     javadoc       javapackager  jconsole      jdeprscan     jimage        jlink         jps           jstack        jvisualvm     orbd          rmic          schemagen     tnameserv     wsimport
+idlj          java          javah         javaws        jcontrol      jdeps         jinfo         jmap          jrunscript    jstat         jweblauncher  pack200       rmid          serialver     unpack200     xjc
+Martins-MacBook-Pro-2:Contents martinpettersson$ cd Home/bin/
+Martins-MacBook-Pro-2:bin martinpettersson$ jshell -v
+-bash: jshell: command not found
+Martins-MacBook-Pro-2:bin martinpettersson$ ./jshell
+|  Welcome to JShell -- Version 9-ea
+|  For an introduction type: /help intro
+
+
+jshell> 1+2
+$1 ==> 3
+
+jshell> System.out.println("lol");
+lol
+
+jshell> System.out.println("lol");
+lol
+
+jshell> int x = 5
+x ==> 5
+
+jshell> x
+x ==> 5
+
+jshell>
+
+jshell>
+[1]+  Stopped                 ./jshell
+Martins-MacBook-Pro-2:bin martinpettersson$ ./jshell -v
+|  Welcome to JShell -- Version 9-ea
+|  For an introduction type: /help intro
+
+
+jshell> System.out.println("lol");
+lol
+
+jshell> /imports
+|    import java.util.*
+|    import java.io.*
+|    import java.math.*
+|    import java.net.*
+|    import java.util.concurrent.*
+|    import java.util.prefs.*
+|    import java.util.regex.*
+
+jshell> /help intro
+|
+|  intro
+|
+|  The jshell tool allows you to execute Java code, getting immediate results.
+|  You can enter a Java definition (variable, method, class, etc), like:  int x = 8
+|  or a Java expression, like:  x + x
+|  or a Java statement or import.
+|  These little chunks of Java code are called 'snippets'.
+|
+|  There are also jshell commands that allow you to understand and
+|  control what you are doing, like:  /list
+|
+|  For a list of commands: /help
+
+jshell> /list
+
+   1 : System.out.println("lol");
+
+jshell> 3+3
+$2 ==> 6
+|  created scratch variable $2 : int
+
+jshell> $1
+|  Error:
+|  cannot find symbol
+|    symbol:   variable $1
+|  $1
+|  ^^
+
+jshell> 1
+$3 ==> 1
+|  created scratch variable $3 : int
+
+jshell> $1
+|  Error:
+|  cannot find symbol
+|    symbol:   variable $1
+|  $1
+|  ^^
+
+jshell> int x = 5
+x ==> 5
+|  created variable x : int
+
+jshell> x
+x ==> 5
+|  value of x : int
+
+jshell> void helloMartin() { System.out.println("Hej, jag heter Martin."); }
+|  created method helloMartin()
+
+jshell> helloMartin()
+Hej, jag heter Martin.
+
+jshell> void helloMartin() { System.out.println("Hej, jag heter Martin. Jag e cool."); }
+|  modified method helloMartin()
+|    update overwrote method helloMartin()
+
+jshell> helloMartin()
+Hej, jag heter Martin. Jag e cool.
+
+jshell> helloMartin()
+Hej, jag heter Martin. Jag e cool.
+
+jshell> /vars
+|    int $2 = 6
+|    int $3 = 1
+|    int x = 5
+
+jshell> /methods
+|    printf (String,Object...)void
+|    helloMartin ()void
+
+jshell> /list
+
+   1 : System.out.println("lol");
+   2 : 3+3
+   3 : 1
+   4 : int x = 5;
+   5 : x
+   7 : helloMartin()
+   8 : void helloMartin() { System.out.println("Hej, jag heter Martin. Jag e cool."); }
+   9 : helloMartin()
+  10 : helloMartin()
+
+jshell> /edit helloMartin
+helloMartin
+
+jshell> /edit helloMartin
+helloMartin
+
+jshell> /edit helloMartin
+|  modified method helloMartin()
+|    update overwrote method helloMartin()
+
+jshell> helloMartin()
+Hej, jag heter Martin. Jag e cool. Din mamma.
+
+jshell> /edit helloMartin
+|  modified method helloMartin()
+|    update overwrote method helloMartin()
+
+jshell>       Display all 451 possibilities? (y or n)
+
+jshell> /list
+
+   1 : System.out.println("lol");
+   2 : 3+3
+   3 : 1
+   4 : int x = 5;
+   5 : x
+   7 : helloMartin()
+   9 : helloMartin()
+  10 : helloMartin()
+  12 : helloMartin()
+  13 : void helloMartin() { System.out.println("Hej, jag heter Martin. Jag e cool. "); }
+
+jshell> 1/2
+$14 ==> 0
+|  created scratch variable $14 : int
+
+jshell> 1.0/2
+$15 ==> 0.5
+|  created scratch variable $15 : double
+
+jshell> $15
+$15 ==> 0.5
+|  value of $15 : double
+
+jshell> 1.0f/2
+$17 ==> 0.5
+|  created scratch variable $17 : float
+
+jshell> 1/2.0f
+$18 ==> 0.5
+|  created scratch variable $18 : float
+
+jshell> Integer i1 = 127
+i1 ==> 127
+|  created variable i1 : Integer
+
+jshell> Integer i2 = 127
+i2 ==> 127
+|  created variable i2 : Integer
+
+jshell> i1 == i2
+$21 ==> true
+|  created scratch variable $21 : boolean
+
+jshell> Integer i2 = 128
+i2 ==> 128
+|  modified variable i2 : Integer
+|    update overwrote variable i2 : Integer
+
+jshell> i1 == i2
+$23 ==> false
+|  created scratch variable $23 : boolean
+
+jshell> printf("I got %d apple", 1)
+I got 1 apple
+jshell> /list
+
+   1 : System.out.println("lol");
+   2 : 3+3
+   3 : 1
+   4 : int x = 5;
+   5 : x
+   7 : helloMartin()
+   9 : helloMartin()
+  10 : helloMartin()
+  12 : helloMartin()
+  13 : void helloMartin() { System.out.println("Hej, jag heter Martin. Jag e cool. "); }
+  14 : 1/2
+  15 : 1.0/2
+  16 : $15
+  17 : 1.0f/2
+  18 : 1/2.0f
+  19 : Integer i1 = 127;
+  21 : i1 == i2
+  22 : Integer i2 = 128;
+  23 : i1 == i2
+  24 : printf("I got %d apple", 1)
+
+jshell> /methods
+|    printf (String,Object...)void
+|    helloMartin ()void
+
+jshell> Integer i2 = 128
+[2]+  Stopped                 ./jshell -v
